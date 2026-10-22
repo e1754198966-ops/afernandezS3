@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="afernandezS3.Views.vLogin"
+             Title="vLogin">
+
+    <ContentPage.Resources>
+
+        <Style x:Key="stylabel" TargetType="Label">
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="TextColor" Value="Blue"/>
+            <Setter Property="BackgroundColor" Value="Purple"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        </Style>
+        
+        <Style x:Key="styleEntry" TargetType="Entry">
+            <Setter Property="BackgroundColor" Value="Beige"/>
+            <Setter Property="TextColor" Value="DarkBlue"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+    </ContentPage.Resources>
+    <VerticalStackLayout
+        Padding="20"
+        Spacing="15"
+        BackgroundColor="White"
+        >
+        
+
+
+        <Label 
+            Text="INICIO DE SESIÓN"
+            FontSize="20"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center" />
+        
+        <!--IMAGENES-->
+        <Image Source="https://png.pngtree.com/png-clipart/20250105/original/pngtree-user-profile-login-icon-in-silver-color-access-authentication-vector-png-image_19841391.png" 
+               HeightRequest="200" 
+               WidthRequest="200" 
+               HorizontalOptions="Center" />
+
+        <Grid HorizontalOptions="Center"
+              VerticalOptions="Center"
+              RowSpacing="10"
+              ColumnSpacing="10">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <Label Text="Usuario:"
+                   Style="{StaticResource stylabel}"
+                   Grid.Row="0" 
+                   Grid.Column="0" 
+                   VerticalOptions="Center" />
+
+            <Entry x:Name="txtUsuario"
+                   Placeholder="Ingrese el usuario"
+                   Style="{StaticResource styleEntry}"
+                   Grid.Row="0"
+                   Grid.Column="1"/>
+            <Label Text="Contrseña: "
+                   Style="{StaticResource stylabel}"
+                   Grid.Row="1"
+                   Grid.Column="0"/>
+            <Entry x:Name="txtContrasena"
+                   Placeholder="Ingresa la Contraseña"
+                   Style="{StaticResource styleEntry}"
+                   IsPassword="True"
+                   Grid.Row="1"
+                   Grid.Column="1"/>
+            <Button x:Name="btnIniciarSesion"
+                    Style="{StaticResource BotonGlobal}"
+                    Text="Iniciar Sesión"
+                    Clicked="btnIniciarSesion_Clicked"
+                    Grid.Row="2"
+                    Grid.Column="0"/>
+            <Button x:Name="btnRegistrarUsuario"
+                    Style="{StaticResource BotonGlobal}"
+                    Text="Registrar Usuario"
+                    Clicked="btnRegistrarUsuario_Clicked"
+                    Grid.Row="2"
+                    Grid.Column="1"/>
+
+
+        </Grid>
+
+
+    </VerticalStackLayout>
+</ContentPage>
